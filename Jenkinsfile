@@ -1,25 +1,16 @@
 pipeline {
+    agent any
 
-agent any
-
-stages {
-
-stage('Build') {
-
-steps {
-
-echo "HelloWorld"
-
-}
-
-}
-
-stage('Run') {
-
-steps {
-
-echo "HelloWorld"
-}
-}
-}
+    stages {
+        stage('Build') {
+            steps {
+                javac BubbleSort.java
+            }
+        }
+        stage('Run') {
+            steps {
+                java BubbleSort
+            }
+        }
+    }
 }
