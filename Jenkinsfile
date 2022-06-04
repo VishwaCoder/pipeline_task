@@ -1,15 +1,16 @@
 pipeline {
-    agent linux
+    agent any
 
     stages {
         stage('Build') {
             steps {
-                sh 'javac HelloWorld.java'
+                bat 'javac HelloWorld.java'
+                bat 'java -version'
             }
         }
         stage('Run') {
             steps {
-                sh 'java HelloWorld'
+              bat 'java HelloWorld'
             }
         }
     }
